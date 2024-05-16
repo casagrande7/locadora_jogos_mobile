@@ -85,8 +85,6 @@ function CadastroJogos(): React.JSX.Element {
 
 }
 
-
-
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -195,13 +193,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 100,
         borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 150,
-        height: 10
+        borderBottomRightRadius: 90,
+        height: 10,
+        marginTop: -40
     },
     footer: {
         paddingVertical: 50,
         backgroundColor: 'white',
-        marginTop: 5,
+        marginTop: 20,
         alignItems: 'center',
         borderTopRightRadius: 40,
         borderTopLeftRadius: 40,
@@ -239,7 +238,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         paddingVertical: 15,
         paddingHorizontal: 30,
-        marginTop: 15,
+        marginTop: 20,
         height: 50,
         width: 250,
         marginLeft: 65,
