@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { ScrollView, StatusBar, StyleSheet, TextInput, TouchableOpacity, } from "react-native";
 import { Image, View, Text } from "react-native-animatable";
-import Footer from "../components/Footer";
-
 
 function CadastroJogos(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
@@ -90,6 +88,7 @@ function CadastroJogos(): React.JSX.Element {
             <ScrollView showsVerticalScrollIndicator={false}>
             <StatusBar backgroundColor={'white'}></StatusBar>
             <View style={styles.header}>
+                <Image style={styles.imagem} resizeMode="contain" source={require('../assets/imagem/logoJogos.png')}></Image>
             </View>
 
             <View style={styles.form}>
@@ -186,20 +185,20 @@ function CadastroJogos(): React.JSX.Element {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#3CB371'
+        backgroundColor: '#2E8B57'
     },
     header: {
-        backgroundColor: 'white',
+        backgroundColor: '#98FB98',
         alignItems: 'center',
         paddingVertical: 100,
         borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 90,
+        borderBottomRightRadius: 100,
         height: 10,
-        marginTop: -40
+        marginTop: -35
     },
     footer: {
         paddingVertical: 50,
-        backgroundColor: 'white',
+        backgroundColor: '#98FB98',
         marginTop: 20,
         alignItems: 'center',
         borderTopRightRadius: 40,
@@ -227,7 +226,7 @@ const styles = StyleSheet.create({
     imagem: {
         height: 100,
         width: 100,
-        marginTop: -60,
+        marginTop: -40,
         marginRight: 15,
         borderRadius: 50,
         borderWidth: 5,
@@ -244,7 +243,7 @@ const styles = StyleSheet.create({
         marginLeft: 65,
     },
     buttonText: {
-        color: "#3CB371",
+        color: "#2E8B57",
         fontWeight: "bold",
         textAlign: "center",
     },
