@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     },
     footer: {
         paddingVertical: 5,
-        backgroundColor: '#8FBC8F',
-        marginTop: 100,
+        backgroundColor: '#CAD49D',
+        marginTop: 20,
         alignItems: 'center',
         borderTopRightRadius: 40,
         borderTopLeftRadius: 40,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         width: 38,
         height: 38,
         marginBottom: 9,
-        marginLeft: 260
+        marginLeft: 130
 
     
     }
