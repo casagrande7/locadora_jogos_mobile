@@ -9,11 +9,14 @@ function Footer(): React.JSX.Element {
 
     return(
         <View style={styles.footer}>
-             <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-                <Image source={require('../assets/imagem/lista.png')} style={styles.icon}/>
-            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Pesquisa')}>
                 <Image source={require('../assets/imagem/lupa.png')} style={styles.icon}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                <Image source={require('../assets/imagem/lista.png')} style={styles.icon}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                <Image source={require('../assets/imagem/cadastro.png')} style={styles.icon}/>
             </TouchableOpacity>
         </View>
     );
@@ -32,16 +35,10 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         flexDirection:'row'
     },
-    cadastroIcon: {
-        width: 38,
-        height: 38,
-        marginBottom: 9,
-        
-    },
     icon: {
-        width: 38,
-        height: 38,
-        marginBottom: 50,
+        width: 40,
+        height: 40,
+        marginBottom: 15,
         marginLeft: 15,
         marginVertical:10
     }
