@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     imagem: {
         height: 100,
         width: 100,
-        marginTop: -40,
+        marginTop: -30,
         marginRight: 15,
         borderRadius: 50,
         borderWidth: 5,
