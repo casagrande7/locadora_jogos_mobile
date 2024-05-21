@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { ScrollView, StatusBar, StyleSheet, TextInput, TouchableOpacity, } from "react-native";
 import { Image, View, Text } from "react-native-animatable";
+import Footer from "../components/Footer";
 
 function CadastroJogos(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
@@ -173,9 +174,7 @@ function CadastroJogos(): React.JSX.Element {
             <TouchableOpacity style={styles.button} onPress={cadastrarJogos}>
                 <Text style={styles.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
-            <View style={styles.footer}>
-
-            </View>
+            <Footer/>
             </ScrollView>
             </View>
         
