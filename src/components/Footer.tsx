@@ -9,7 +9,9 @@ function Footer(): React.JSX.Element {
 
     return(
         <View style={styles.footer}>
-            
+             <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                <Image source={require('../assets/imagem/lista.png')} style={styles.cadastroIcon}/>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -19,16 +21,20 @@ const styles = StyleSheet.create({
         flexGrow: 1
     },
     footer: {
-        paddingVertical: 50,
+        paddingVertical: 5,
         backgroundColor: '#8FBC8F',
-        marginTop: 20,
+        marginTop: 100,
         alignItems: 'center',
         borderTopRightRadius: 40,
         borderTopLeftRadius: 40,
     },
-    footerIcon: {
-        width: 30,
-        height: 30
+    cadastroIcon: {
+        width: 38,
+        height: 38,
+        marginBottom: 9,
+        marginLeft: 260
+
+    
     }
 });
 

@@ -20,32 +20,53 @@ function CadastroJogos(): React.JSX.Element {
         const newErrors: any = {};
     
         if (!nome) {
-          newErrors.nome = "O campo nome é obrigatório";
-        }
-    
-        if (!preco) {
-          newErrors.preco = "O campo preço é obrigatório";
-        }
-    
-        if (!descricao) {
-          newErrors.descricao = "O campo descrição é obrigatório";
-        }
-    
-        if (!classificacao) {
-          newErrors.classificacao = "O campo classificação é obrigatório";
-        }
-    
-        if (!plataformas) {
-          newErrors.plataformas = "O campo plataformas é obrigatório";
-        }
-    
-        if (!desenvolvedor) {
-          newErrors.desenvolvedor = "O campo desenvolvedor é obrigatório";
-        }
-    
-        if (!distribuidora) {
-          newErrors.distribuidora = "O campo distribuidora é obrigatório";
-        }
+            newErrors.nome = "O campo nome é obrigatório";
+          } else if (nome.length < 5 || nome.length > 120) {
+            newErrors.nome = "O campo nome deve ter entre 5 e 120 caracteres";
+          }
+        
+          if (!preco) {
+            newErrors.preco = "O campo preço é obrigatório";
+          } else if (!/^\d+(\.\d{1,2})?$/.test(preco)) {
+            newErrors.preco = "O campo preço deve ser um número decimal com no máximo 2 casas decimais";
+          }
+      
+          if (!descricao) {
+            newErrors.descricao = "O campo descrição é obrigatório";
+          } else if (descricao.length < 10 || descricao.length > 800) {
+            newErrors.descricao = "O campo descrição deve ter entre 10 e 800 caracteres";
+          }
+        
+          if (!classificacao) {
+            newErrors.classificacao = "O campo classificação é obrigatório";
+          } else if (classificacao.length < 5 || classificacao.length > 20) {
+            newErrors.classificacao = "O campo classificação deve ter entre 5 e 20 caracteres";
+          }
+        
+          if (!plataformas) {
+            newErrors.plataformas = "O campo plataformas é obrigatório";
+          } else if (plataformas.length < 3 || plataformas.length > 60) {
+            newErrors.plataformas = "O campo plataformas deve ter entre 3 e 60 caracteres";
+          }
+        
+          if (!desenvolvedor) {
+            newErrors.desenvolvedor = "O campo desenvolvedor é obrigatório";
+          } else if (desenvolvedor.length < 2 || desenvolvedor.length > 120) {
+            newErrors.desenvolvedor = "O campo desenvolvedor deve ter entre 2 e 120 caracteres";
+          }
+        
+          if (!distribuidora) {
+            newErrors.distribuidora = "O campo distribuidora é obrigatório";
+          } else if (distribuidora.length < 2 || distribuidora.length > 120) {
+            newErrors.distribuidora = "O campo distribuidora deve ter entre 2 e 120 caracteres";
+          }
+        
+          if (!categoria) {
+            newErrors.categoria = "O campo categoria é obrigatório";
+          } else if (categoria.length < 3 || categoria.length > 55) {
+            newErrors.categoria = "O campo categoria deve ter entre 3 e 55 caracteres";
+          }
+        
     
         setErrors(newErrors);
     
@@ -195,15 +216,6 @@ const styles = StyleSheet.create({
         height: 10,
         marginTop: -35
     },
-    footer: {
-        paddingVertical: 50,
-        backgroundColor: '#98FB98',
-        marginTop: 20,
-        alignItems: 'center',
-        borderTopRightRadius: 40,
-        borderTopLeftRadius: 40,
-
-    },
     form: {
         width: 360,
         marginLeft: 10,
@@ -211,14 +223,13 @@ const styles = StyleSheet.create({
 
     },
     input: {
-        backgroundColor: 'transparent',
+        backgroundColor: '#DEB887',
         marginTop: 32,
         fontWeight: 'bold',
-        height: 50,
-        borderBottomWidth: 2,
-        borderColor: '#fff',
+        height: 40,
+        borderRadius: 15,
         color: 'white',
-        paddingLeft: 10,
+        paddingLeft: 1,
         marginLeft: 10,
         marginRight: 10
     },
