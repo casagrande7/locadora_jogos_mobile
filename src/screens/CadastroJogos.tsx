@@ -89,7 +89,7 @@ function CadastroJogos(): React.JSX.Element {
             <ScrollView showsVerticalScrollIndicator={false}>
             <StatusBar backgroundColor={'white'}></StatusBar>
             <View style={styles.header}>
-                <Image style={styles.imagem} resizeMode="contain" source={require('../assets/imagem/logoJogos.png')}></Image>
+                <Image style={styles.imagem} resizeMode="contain" source={require('../assets/imagem/logos.png')}></Image>
             </View>
 
             <View style={styles.form}>
@@ -184,10 +184,10 @@ function CadastroJogos(): React.JSX.Element {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2E8B57'
+        backgroundColor: '#90EE90'
     },
     header: {
-        backgroundColor: '#98FB98',
+        backgroundColor: '#8FBC8F',
         alignItems: 'center',
         paddingVertical: 100,
         borderBottomLeftRadius: 0,
@@ -223,13 +223,12 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     imagem: {
-        height: 100,
-        width: 100,
-        marginTop: -30,
+        height: 150,
+        width: 150,
+        marginTop: -60,
         marginRight: 15,
         borderRadius: 50,
-        borderWidth: 5,
-        borderColor: '#3CB371'
+        marginLeft: -20
     },
     button: {
         backgroundColor: "white",

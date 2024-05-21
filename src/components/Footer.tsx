@@ -9,18 +9,7 @@ function Footer(): React.JSX.Element {
 
     return(
         <View style={styles.footer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                <Image source={require('../assets/images/')} style={styles.footerIcon}/>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('PesquisaProduto')}>
-                <Image source={require('../assets/images/')} style={styles.footerIcon}/>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('')}>
-                <Image source={require('../assets/images/')} style={styles.footerIcon}/>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-                <Image source={require('../assets/images/')} style={styles.footerIcon}/>
-            </TouchableOpacity>
+            
         </View>
     );
 }
@@ -31,7 +20,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         paddingVertical: 50,
-        backgroundColor: '#98FB98',
+        backgroundColor: '#8FBC8F',
         marginTop: 20,
         alignItems: 'center',
         borderTopRightRadius: 40,
