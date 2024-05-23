@@ -29,7 +29,7 @@ function JogosListagem(): React.JSX.Element {
 
       const renderJogosItem = ({ item }: { item: Jogos }) => (
         <View style={styles.jogosContainer}>
-            <Text style={styles.textJogos}>{`Nome:       ${item.nome}`}</Text>
+            <Text style={styles.textJogos}>{`Nome:     ${item.nome}`}</Text>
             <Text style={styles.textPreco}>{`Preço:      ${item.preco}`}</Text>
             <Text style={styles.textJogos}>{`Descrição: ${item.descricao}`}</Text>
             <Text style={styles.textJogos}>{`Classificação:     ${item.classificacao}`}</Text>
@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white',
         marginTop: 1,
-        marginRight: 205
+        marginRight: 200
     },
     textPreco: {
         fontWeight: 'bold',
         fontSize: 20,
         textAlign: 'center',
         color: 'white',
-        marginRight: 284
+        marginRight: 296
     },
     jogosContainer: {
     marginTop: 20,
