@@ -4,21 +4,21 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 function Footer(): React.JSX.Element {
 
-
+    const navigation = useNavigation();
 
 
     return(
         <View style={styles.footer}>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
                 <Image source={require('../assets/imagem/cadastro.png')} style={styles.icon}/>
             </TouchableOpacity>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.navigate('Listagem')}>
                 <Image source={require('../assets/imagem/lista.png')} style={styles.icon}/>
             </TouchableOpacity>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.navigate('Pesquisa')}>
                 <Image source={require('../assets/imagem/lupa.png')} style={styles.icon}/>
             </TouchableOpacity>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.navigate('Atualizar')}>
                 <Image source={require('../assets/imagem/atualizar.png')} style={styles.icon}/>
             </TouchableOpacity>
         </View>

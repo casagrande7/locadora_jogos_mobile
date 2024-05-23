@@ -78,7 +78,6 @@ function CadastroJogos(): React.JSX.Element {
     const cadastrarJogos = async () => {
         if (validateForm()){    
         try {
-
             const formData = new FormData();
             formData.append('nome', nome);
             formData.append('preco',preco);
@@ -89,12 +88,10 @@ function CadastroJogos(): React.JSX.Element {
             formData.append('distribuidora', distribuidora);
             formData.append('categoria', categoria);
 
-            const response = await axios.post('http://10.137.11.207:8000/api/register/games', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            console.log(response)
+            console.log(formData)
+
+            const response = await axios.post("http://10.137.11.234:8000/api/register/games", formData);
+         console.log(response.data)
         } catch (error) {
             if (error.response && error.response.data && error.response.data.errors){
                 setErrors(error.response.data.errors);

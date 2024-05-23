@@ -4,11 +4,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import JogosListagem from "./src/screens/ListagemJogos";
 
-
+const Stack = createStackNavigator();
 
 function App(): React.ReactElement {
   return (
-    <CadastroJogos />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Listagem" component={JogosListagem} options={{ headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 export default App;
