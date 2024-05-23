@@ -9,14 +9,17 @@ function Footer(): React.JSX.Element {
 
     return(
         <View style={styles.footer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                <Image source={require('../assets/imagem/cadastro.png')} style={styles.icon}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Listagem')}>
+                <Image source={require('../assets/imagem/lista.png')} style={styles.icon}/>
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Pesquisa')}>
                 <Image source={require('../assets/imagem/lupa.png')} style={styles.icon}/>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-                <Image source={require('../assets/imagem/lista.png')} style={styles.icon}/>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-                <Image source={require('../assets/imagem/cadastro.png')} style={styles.icon}/>
+            <TouchableOpacity onPress={() => navigation.navigate('Atualizar')}>
+                <Image source={require('../assets/imagem/atualizar.png')} style={styles.icon}/>
             </TouchableOpacity>
         </View>
     );
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     footer: {
         paddingVertical: 2,
         backgroundColor: '#CAD49D',
-        marginTop: 15,
+        marginTop: 14,
         alignItems: 'center',
         borderTopRightRadius: 40,
         borderTopLeftRadius: 40,
@@ -39,8 +42,8 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         marginBottom: 15,
-        marginLeft: 15,
-        marginVertical:10
+        marginLeft: 42,
+        marginVertical: 8
     }
 });
 
