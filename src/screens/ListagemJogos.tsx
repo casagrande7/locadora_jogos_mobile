@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { View } from "react-native-animatable";
 import Footer from "../components/Footer";
+import { useNavigation } from "@react-navigation/native";
 
 function JogosListagem(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
@@ -16,6 +17,8 @@ function JogosListagem(): React.JSX.Element {
     const [categoria, setCategoria] = useState<string>("");
     const [carrinho, setCarrinho] = useState<{ [key: string]: number }>({});
     const [mensagemSucesso, setMensagemSucesso] = useState('');
+
+    
 
     
 

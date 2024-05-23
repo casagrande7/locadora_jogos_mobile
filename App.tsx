@@ -8,7 +8,7 @@ import JogosListagem from "./src/screens/ListagemJogos";
 
 function App(): React.ReactElement {
   return (
-    <JogosListagem />
+    <CadastroJogos />
   );
 }
 export default App;
