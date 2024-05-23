@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 
 function JogosListagem(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
+    const [filteredJogos, setFilteredJogos] = useState<Jogos[]>(jogos);
 
     useEffect(() => {
         const fetchProdutos = async () => {
@@ -27,6 +28,20 @@ function JogosListagem(): React.JSX.Element {
         fetchProdutos();
     }, []);
 
+    const handleDelete = async (id: number) => {
+        try {
+          await axios.delete(`http://10.137.11.234:8000/api/delete/game/${id}`);
+          setJogos(jogos.filter((jogo) => jogo.id !== id));
+          setFilteredJogos(filteredJogos.filter((jogo) => jogo.id !== id));
+        } catch (error) {
+          // console.error(`Erro: ${error.message}`);
+          // if (error.response) {
+          //   console.error(`Status: ${error.response.status} ${error.response.statusText}`);
+          // }
+        }
+      };
+    
+
       const renderJogosItem = ({ item }: { item: Jogos }) => (
         <View style={styles.jogosContainer}>
             <Text style={styles.textJogos}>{`Nome:     ${item.nome}`}</Text>
@@ -37,7 +52,9 @@ function JogosListagem(): React.JSX.Element {
             <Text style={styles.textJogos}>{`Desenvolvedor:  ${item.desenvolvedor}`}</Text>
             <Text style={styles.textJogos}>{`Distribuidora:      ${item.distribuidora}`}</Text>
             <Text style={styles.textJogos}>{`Categoria:             ${item.categoria}`}</Text>
-            
+            <TouchableOpacity style={styles.botao} onPress={() => handleDelete(item.id)}>
+          <Text style={styles.botaoText}>Deletar</Text>
+        </TouchableOpacity>
         </View>
     );
 
@@ -99,16 +116,33 @@ const styles = StyleSheet.create({
     },
     jogosContainer: {
     marginTop: 20,
-    backgroundColor: '#CAD49D',
+    backgroundColor: '#8FD694',
     padding: 5,
     borderRadius: 20,
     alignSelf: 'center',
     alignItems: 'center',
     width: 370,
-    height: 530,
+    height: 580,
     flexDirection: 'column',
     justifyContent: 'space-between'
-    }
+    },
+    botaoText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center',
+      },
+      botao: {
+        backgroundColor: '#6F8F72',
+        padding: 10,
+        borderRadius: 15,
+        marginTop: 12,
+        height: 42,
+        width: '60%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+      },
 })
 
 export default JogosListagem;
