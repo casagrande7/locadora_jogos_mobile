@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ScrollView, StatusBar, StyleSheet, TextInput, TouchableOpacity, } from "react-native";
 import { Image, View, Text } from "react-native-animatable";
 import Footer from "../components/Footer";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 function CadastroJogos(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
@@ -15,6 +16,7 @@ function CadastroJogos(): React.JSX.Element {
     const [distribuidora, setDistribuidora] = useState<string>("");
     const [categoria, setCategoria] = useState<string>("");
     const [errors, setErrors] = useState<string>("");
+
 
     const validateForm = () => {
         const newErrors: any = {};
@@ -104,7 +106,6 @@ function CadastroJogos(): React.JSX.Element {
     }
 
 }
-
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
