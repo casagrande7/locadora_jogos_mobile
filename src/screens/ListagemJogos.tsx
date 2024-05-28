@@ -11,7 +11,7 @@ function JogosListagem(): React.JSX.Element {
     useEffect(() => {
         const fetchProdutos = async () => {
             try {
-                const response = await axios.get('http://10.137.11.234:8000/api/return/all/games');
+                const response = await axios.get('http://10.137.11.207:8000/api/return/all/games');
                 if (Array.isArray(response.data.data)) {
                   setJogos(response.data.data);
                 } else {
@@ -30,7 +30,7 @@ function JogosListagem(): React.JSX.Element {
 
     const handleDelete = async (id: number) => {
         try {
-          await axios.delete(`http://10.137.11.234:8000/api/delete/game/${id}`);
+          await axios.delete(`http://10.137.11.207:8000/api/delete/game/${id}`);
           setJogos(jogos.filter((jogo) => jogo.id !== id));
           setFilteredJogos(filteredJogos.filter((jogo) => jogo.id !== id));
         } catch (error) {
@@ -47,11 +47,11 @@ function JogosListagem(): React.JSX.Element {
             <Text style={styles.textJogos}>{`Nome:     ${item.nome}`}</Text>
             <Text style={styles.textPreco}>{`Preço:      ${item.preco}`}</Text>
             <Text style={styles.textJogos}>{`Descrição: ${item.descricao}`}</Text>
-            <Text style={styles.textJogos}>{`Classificação:     ${item.classificacao}`}</Text>
-            <Text style={styles.textJogos}>{`Plataformas:     ${item.plataformas}`}</Text>
+            <Text style={styles.textJogos}>{`Classificação:      ${item.classificacao}`}</Text>
+            <Text style={styles.textJogos}>{`Plataformas:       ${item.plataformas}`}</Text>
             <Text style={styles.textJogos}>{`Desenvolvedor:  ${item.desenvolvedor}`}</Text>
             <Text style={styles.textJogos}>{`Distribuidora:      ${item.distribuidora}`}</Text>
-            <Text style={styles.textJogos}>{`Categoria:             ${item.categoria}`}</Text>
+            <Text style={styles.textJogos}>{`Categoria:            ${item.categoria}`}</Text>
             <TouchableOpacity style={styles.botao} onPress={() => handleDelete(item.id)}>
           <Text style={styles.botaoText}>Deletar</Text>
         </TouchableOpacity>
