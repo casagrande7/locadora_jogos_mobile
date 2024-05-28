@@ -7,25 +7,30 @@ import Footer from "../components/Footer";
 function JogosListagem(): React.JSX.Element {
     const [jogos, setJogos] = useState<Jogos[]>([]);
     const [filteredJogos, setFilteredJogos] = useState<Jogos[]>(jogos);
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
-        const fetchProdutos = async () => {
-            try {
-                const response = await axios.get('http://10.137.11.207:8000/api/return/all/games');
-                if (Array.isArray(response.data.data)) {
-                  setJogos(response.data.data);
-                } else {
-                  // console.error('A API deve retornar um array de jogos');
-                }
-              } catch (error) {
-                // console.error(`Erro: ${error.message}`);
-                // if (error.response) {
-                //   console.error(`Status: ${error.response.status} ${error.response.statusText}`);
-                // }
-              }
-            };
+      const fetchData = async () => {
+        setLoading(true);
+        try {
+          const response = await axios.get('http://10.137.11.207:8000/api/return/all/games');
+          if (Array.isArray(response.data.data)) {
+            setJogos(response.data.data);
+            setFilteredJogos(response.data.data);
+          } else {
+            // console.error('A API deve retornar um array de jogos');
+          }
+        } catch (error) {
+          // console.error(`Erro: ${error.message}`);
+          // if (error.response) {
+          //   console.error(`Status: ${error.response.status} ${error.response.statusText}`);
+          // }
+        }
+        setLoading(false);
+      };
 
-        fetchProdutos();
+        fetchData();
     }, []);
 
     const handleDelete = async (id: number) => {
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#484538'
     },
     header: {
-        backgroundColor: '#CAD49D',
+        backgroundColor: '#067451',
         alignItems: 'center',
         paddingVertical: 80,
         borderBottomLeftRadius: 100,

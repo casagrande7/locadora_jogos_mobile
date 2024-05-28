@@ -11,7 +11,7 @@ function App(): React.ReactElement {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Cadastro" component={CadastroJogos} options={{ headerShown: false}}/>
+        <Stack.Screen name="Listagem" component={JogosListagem} options={{ headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
