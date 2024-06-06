@@ -169,6 +169,7 @@ height: 42,
 width: '49%', // ajuste a largura para 50%
 justifyContent: 'center',
 alignItems: 'center',
+fontWeight: 'bold'
 },
 botaoEditar: {
 backgroundColor: 'blue',
@@ -179,6 +180,7 @@ height: 42,
 width: '49%', // ajuste a largura para 50%
 justifyContent: 'center',
 alignItems: 'center',
+fontWeight: 'bold'
 },
 botaoContainer: {
 flexDirection: 'row', // adicione essa propriedade
