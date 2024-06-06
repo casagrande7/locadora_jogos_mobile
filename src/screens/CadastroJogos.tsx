@@ -207,10 +207,10 @@ function CadastroJogos(): React.JSX.Element {
       </ScrollView>
       <View style={styles.footer}>
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-          <Image source={require('../assets/imagem/cadastro.png')} style={styles.footerIcon} />
+          <Image source={require('../assets/imagem/noteSelect.png')} style={styles.footerIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Listagem')}>
-          <Image source={require('../assets/imagem/lista.png')} style={styles.footerIcon} />
+          <Image source={require('../assets/imagem/checklist.png')} style={styles.footerIcon} />
         </TouchableOpacity>
       </View>
     </View>
@@ -243,8 +243,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   footerIcon: {
-    width: 30,
-    height: 30
+    width: 40,
+    height: 40
   },
   form: {
     width: 360,

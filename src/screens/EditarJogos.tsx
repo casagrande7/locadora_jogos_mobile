@@ -221,14 +221,14 @@ const EditarJogos: React.FC<Props> = ({ route }) => {
       <View style={styles.footer}>
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Image
-            source={require('../assets/imagem/cadastro.png')}
+            source={require('../assets/imagem/note.png')}
             style={styles.footerIcon}
           />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('Listagem')}>
           <Image
-            source={require('../assets/imagem/lista.png')}
+            source={require('../assets/imagem/checklist.png')}
             style={styles.footerIcon}
           />
         </TouchableOpacity>
@@ -263,8 +263,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   footerIcon: {
-    width: 30,
-    height: 30
+    width: 40,
+    height: 40
   },
   form: {
     width: 360,
